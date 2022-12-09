@@ -27,9 +27,9 @@ let initializeCrates(): char array array =
     let n = Seq.item maxHeight textCrates |> split "   " |> Seq.length
     let xss = textCrates |> Seq.map (fun s -> s.ToCharArray()) |> Seq.toArray
     [|
-      for j in 0 .. (n - 1) do
+      for j = 0 to (n - 1) do
         [|
-          for i in 0 .. (maxHeight - 1) do
+          for i = 0 to (maxHeight - 1) do
             let k = 4 * j + 1
             if k < xss[i].Length && xss[i][k] <> ' ' then
               yield xss[i][k]
