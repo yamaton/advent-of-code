@@ -10,6 +10,12 @@
     CrZsJsPPZsGzwwsLwLmpwMDw
     ```
 
+    To run this script agaist input file,
+
+    ```shell
+    dotnet fsi day02.fsx < day02.txt
+    ```
+
 *)
 
 let split (sep: string) (value: string) = value.Split sep

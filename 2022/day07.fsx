@@ -28,6 +28,12 @@
   7214296 k
   ```
 
+  To run this script agaist input file,
+
+  ```shell
+  dotnet fsi day07.fsx < day07.txt
+  ```
+
 *)
 
 // directory and file as a node pointing parent and children nodes

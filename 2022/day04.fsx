@@ -10,6 +10,12 @@
     2-6,4-8
     ```
 
+    To run this script agaist input file,
+
+    ```shell
+    dotnet fsi day04.fsx < day04.txt
+    ```
+
 *)
 
 let split (sep: string) (value: string) = value.Split sep

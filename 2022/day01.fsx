@@ -1,23 +1,29 @@
 (*
 
-Here is a sample input text:
+    Here is a sample input text:
 
-```
-1000
-2000
-3000
+    ```
+    1000
+    2000
+    3000
 
-4000
+    4000
 
-5000
-6000
+    5000
+    6000
 
-7000
-8000
-9000
+    7000
+    8000
+    9000
 
-10000
-```
+    10000
+    ```
+
+    To run this script agaist input file,
+
+    ```shell
+    dotnet fsi day01.fsx < day01.txt
+    ```
 
 *)
 

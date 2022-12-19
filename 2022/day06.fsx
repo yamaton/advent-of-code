@@ -5,6 +5,12 @@
     mjqjpqmgbljsphdztnvjfqwrcgsmlb
     ```
 
+    To run this script agaist input file,
+
+    ```shell
+    dotnet fsi day06.fsx < day06.txt
+    ```
+
 *)
 
 // a start marker is a sequence of four characters that are all different

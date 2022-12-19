@@ -10,7 +10,16 @@
   35390
   ```
 
+
+  To run this script agaist input file,
+
+  ```shell
+  dotnet fsi day08.fsx < day08.txt
+  ```
+
 *)
+
+
 let split (sep: string) (value: string) = value.Split sep
 let flip (f: 'a -> 'b -> 'c) = fun b a -> f a b
 
