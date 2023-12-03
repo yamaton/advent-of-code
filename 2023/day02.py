@@ -16,8 +16,8 @@ class Hand:
 def parse_event(s: str) -> Hand:
     hand = Hand()
     count_color_pairs = [tup.split() for tup in s.split(", ")]
-    for c, color in count_color_pairs:
-        count = int(c)
+    for cnt_str, color in count_color_pairs:
+        count = int(cnt_str)
         assert color in ("red", "green", "blue")
         setattr(hand, color, count)
     return hand
@@ -32,9 +32,11 @@ def power(hand: Hand) -> int:
 
 
 def reduce(hands: Iterable[Hand]) -> Hand:
-    r = max(h.red for h in hands)
-    g = max(h.green for h in hands)
-    b = max(h.blue for h in hands)
+    r, g, b = 0, 0, 0
+    for h in hands:
+        r = max(r, h.red)
+        g = max(g, h.green)
+        b = max(b, h.blue)
     return Hand(r, g, b)
 
 
