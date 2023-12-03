@@ -2,24 +2,19 @@
 Usage: python day02.py < input.txt
 
 """
-import dataclasses
+from pydantic import BaseModel
 from typing import Iterable
 
-
-@dataclasses.dataclass
-class Hand:
+class Hand(BaseModel):
     red: int = 0
     green: int = 0
     blue: int = 0
 
 
 def parse_event(s: str) -> Hand:
-    hand = Hand()
     count_color_pairs = [tup.split() for tup in s.split(", ")]
-    for cnt_str, color in count_color_pairs:
-        count = int(cnt_str)
-        assert color in ("red", "green", "blue")
-        setattr(hand, color, count)
+    hand_dict = {color: int(count) for count, color in count_color_pairs}
+    hand = Hand(**hand_dict)
     return hand
 
 
@@ -37,7 +32,7 @@ def reduce(hands: Iterable[Hand]) -> Hand:
         r = max(r, h.red)
         g = max(g, h.green)
         b = max(b, h.blue)
-    return Hand(r, g, b)
+    return Hand(red=r, green=g, blue=b)
 
 
 def day02a(s: str) -> int:
