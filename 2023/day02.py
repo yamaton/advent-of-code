@@ -1,6 +1,8 @@
 """
 Usage: python day02.py < input.txt
 
+Requirements:
+  - pydantic
 """
 from pydantic import BaseModel
 from typing import Iterable

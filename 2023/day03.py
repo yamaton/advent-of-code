@@ -1,6 +1,10 @@
 """
 Usage:
   python day03.py input.txt
+
+Requirements:
+  - pydantic
+
 """
 from pydantic import BaseModel
 from typing import Set, Tuple
@@ -94,8 +98,6 @@ def day03a(grid: list[str]) -> int:
     parts = locate_parts(grid)
     shape = len(grid), len(grid[0])
     territory = {loc for sym in symbols for loc in neighbors(sym.coord, shape)}  # type: ignore
-    for p in parts:
-        x = p.coordinates & territory
     selected_parts = {p for p in parts if any(p.coordinates & territory)}  # type: ignore
     return sum(p.number for p in selected_parts)
 
